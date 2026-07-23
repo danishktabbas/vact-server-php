@@ -9,12 +9,21 @@ namespace Vact;
  */
 class VactServerError extends \RuntimeException
 {
-    public function __construct(
-        public readonly string $code,
-        string $message,
-        public readonly ?int $status = null
-    ) {
+    /**
+     * The stable machine-readable code, e.g. "invalid_signature".
+     *
+     * Named errorCode rather than code because Exception already declares a
+     * non-readonly integer $code, which cannot be redeclared as a readonly
+     * string.
+     */
+    public readonly string $errorCode;
+    public readonly ?int $status;
+
+    public function __construct(string $errorCode, string $message, ?int $status = null)
+    {
         parent::__construct($message);
+        $this->errorCode = $errorCode;
+        $this->status = $status;
     }
 }
 

@@ -40,7 +40,7 @@ use Vact\VactServerError;
 $raw = file_get_contents('php://input');
 try {
     $event = verifyVactWebhook($raw, getallheaders(), getenv('VACT_WEBHOOK_SECRET'));
-} catch (VactServerError $e) {
+} catch (VactServerError $e) {   // $e->errorCode is stable
     http_response_code(400);   // never process an unverified body
     exit;
 }
@@ -62,3 +62,16 @@ $result = $vact->deleteUserData($userId);   // pages internally until complete
 ```
 
 Full documentation: <https://vact.online/docs.html>
+
+## Errors
+
+`VactServerError` carries `errorCode` (stable, e.g. `invalid_signature`) and
+`status` (the HTTP code, when there was one). It is named `errorCode` rather
+than `code` because PHP's built-in `Exception` already reserves `$code` for an
+integer.
+
+## Testing
+
+```bash
+php tests/run.php
+```

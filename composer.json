@@ -4,16 +4,31 @@
   "type": "library",
   "license": "proprietary",
   "homepage": "https://vact.online/docs.html",
-  "keywords": ["vact", "webrtc", "voip", "calling", "video-call"],
+  "keywords": [
+    "vact",
+    "webrtc",
+    "voip",
+    "calling",
+    "video-call"
+  ],
   "require": {
     "php": ">=8.1",
     "ext-curl": "*",
     "ext-json": "*"
   },
   "autoload": {
-    "psr-4": { "Vact\\": "src/" },
-    "files": ["src/VactServer.php"]
+    "psr-4": {
+      "Vact\\": "src/"
+    },
+    "files": [
+      "src/VactServer.php"
+    ]
   },
-  "config": { "sort-packages": true },
-  "minimum-stability": "stable"
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "scripts": {
+    "test": "php tests/run.php"
+  }
 }
