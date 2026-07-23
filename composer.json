@@ -1,0 +1,19 @@
+{
+  "name": "firstlogicmetalab/vact-server",
+  "description": "Server-only VACT client: mint access tokens and verify webhooks. No dependencies.",
+  "type": "library",
+  "license": "proprietary",
+  "homepage": "https://vact.online/docs.html",
+  "keywords": ["vact", "webrtc", "voip", "calling", "video-call"],
+  "require": {
+    "php": ">=8.1",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": { "Vact\\": "src/" },
+    "files": ["src/VactServer.php"]
+  },
+  "config": { "sort-packages": true },
+  "minimum-stability": "stable"
+}
