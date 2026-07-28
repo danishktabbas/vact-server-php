@@ -3,6 +3,10 @@
 Server-only VACT client for PHP. **No Composer dependencies** — just
 `ext-curl` and `ext-json`.
 
+> **New to VACT?** [Create a free account at vact.online](https://vact.online) —
+> **₹100 of calling credit** to build with, no card required. Full guides and
+> API reference: [vact.online/docs.html](https://vact.online/docs.html).
+
 ```bash
 composer require firstlogicmetalab/vact-server
 ```
@@ -75,3 +79,8 @@ integer.
 ```bash
 php tests/run.php
 ```
+
+---
+
+Client SDKs (web/React, React Native, Flutter), runnable examples and the full
+API reference: <https://vact.online/docs.html> · Sign up free: <https://vact.online>
